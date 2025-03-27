@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRUJAS - Centro de Belleza</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    
+    <header class="text-center py-10 bg-purple-800 text-white text-5xl font-bold">
+        BRUJAS ✨
+    </header>
+
+    <section class="max-w-4xl mx-auto p-6">
+        <h2 class="text-3xl text-center font-semibold mb-6">Nuestros Servicios</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold">Nails & Lashes & Brows</h3>
+                <p>Manicura, pedicura, extensiones de pestañas, diseño de cejas.</p>
+                <p class="text-yellow-400 text-lg">Desde $15</p>
+                <button onclick="reservarWhatsApp('Nails & Lashes & Brows')" class="mt-3 bg-purple-500 hover:bg-purple-700 text-white px-4 py-2 rounded">Reservar</button>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold">Faciales</h3>
+                <p>Tratamientos rejuvenecedores para tu piel.</p>
+                <p class="text-yellow-400 text-lg">Desde $20</p>
+                <button onclick="reservarWhatsApp('Faciales')" class="mt-3 bg-purple-500 hover:bg-purple-700 text-white px-4 py-2 rounded">Reservar</button>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold">Tatuajes & Micropigmentación</h3>
+                <p>Tatuajes artísticos y maquillaje semipermanente.</p>
+                <p class="text-yellow-400 text-lg">Desde $50</p>
+                <button onclick="reservarWhatsApp('Tatuajes & Micropigmentación')" class="mt-3 bg-purple-500 hover:bg-purple-700 text-white px-4 py-2 rounded">Reservar</button>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold">Gemas</h3>
+                <p>Adornos y decoraciones con piedras preciosas.</p>
+                <p class="text-yellow-400 text-lg">Desde $10</p>
+                <button onclick="reservarWhatsApp('Gemas')" class="mt-3 bg-purple-500 hover:bg-purple-700 text-white px-4 py-2 rounded">Reservar</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="max-w-4xl mx-auto p-6 text-center">
+        <h2 class="text-3xl font-semibold mb-4">Ubicación</h2>
+        <iframe class="w-full h-64 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509091!2d144.95373531568005!3d-37.81627944202171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d5df1a9d5e1%3A0xf0f0f0f0f0f0f0f0!2sCentro%20de%20Belleza!5e0!3m2!1ses!2ses!4v1632203054004!5m2!1ses!2ses" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+    
+    <section class="max-w-4xl mx-auto p-6 text-center">
+        <h2 class="text-3xl font-semibold mb-4">Reseñas en Vivo</h2>
+        <iframe class="w-full h-64 rounded-lg" src="https://www.google.com/maps/embed/v1/place?q=Centro+de+Belleza&key=TU_CLAVE_API"></iframe>
+    </section>
+    
+    <script>
+        function reservarWhatsApp(servicio) {
+            let mensaje = `Hola, quiero reservar una cita para ${servicio}. ¿Cuándo tienen disponibilidad?`;
+            let url = `https://wa.me/+5492615785797?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+    
+</body>
+</html>
