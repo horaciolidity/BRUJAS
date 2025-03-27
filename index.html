@@ -7,86 +7,100 @@
     <link rel="stylesheet" href="styles.css">
 </head>
     <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
-    color: #333;
-}
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
 
-header {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
+        header {
+            background: linear-gradient(to right, #ff4081, #ff80ab);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
 
-h1 {
-    margin: 0;
-    font-size: 2em;
-}
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: white;
+            z-index: -1;
+            border-radius: 50% 50% 0 0;
+        }
 
-main {
-    width: 90%;
-    max-width: 800px;
-    margin: 20px auto;
-}
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #ff4081;
+        }
 
-section {
-    background: white;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
+        main {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
 
-h2 {
-    border-bottom: 2px solid #ff4081;
-    padding-bottom: 5px;
-}
+        section {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-ul {
-    list-style: none;
-    padding: 0;
-}
+        h2 {
+            border-bottom: 2px solid #ff4081;
+            padding-bottom: 5px;
+        }
 
-li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-}
+        ul {
+            list-style: none;
+            padding: 0;
+        }
 
-li:last-child {
-    border-bottom: none;
-}
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
 
-.btn {
-    background-color: #ff4081;
-    color: white;
-    padding: 8px 12px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.3s;
-}
+        li:last-child {
+            border-bottom: none;
+        }
 
-.btn:hover {
-    background-color: #d81b60;
-}
+        .btn {
+            background: linear-gradient(to right, #6a0dad, #3a0071);
+            color: white;
+            padding: 8px 12px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-iframe {
-    width: 100%;
-    border-radius: 8px;
-}
+        .btn:hover {
+            background: linear-gradient(to right, #3a0071, #6a0dad);
+        }
+
+        iframe {
+            width: 100%;
+            border-radius: 8px;
+        }
 
     </style>
 <body>
     <header>
         <h1>BRUJAS</h1>
-        <p>Transforma tu belleza con nuestros servicios exclusivos</p>
+        <p>Centro de Estetica</p>
     </header>
     <main>
         <section id="nails">
@@ -129,7 +143,7 @@ iframe {
         </section>
         <section id="ubicacion">
             <h2>Ubicación</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://maps.app.goo.gl/avRiE2VWoF4mKx6H8?g_st=awb" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </section>
     </main>
 </body>
