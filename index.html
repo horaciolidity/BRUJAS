@@ -6,6 +6,83 @@
     <title>BRUJAS - Centro de Belleza</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+main {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+section {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    border-bottom: 2px solid #ff4081;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+.btn {
+    background-color: #ff4081;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #d81b60;
+}
+
+iframe {
+    width: 100%;
+    border-radius: 8px;
+}
+
+    </style>
 <body>
     <header>
         <h1>BRUJAS</h1>
@@ -56,4 +133,19 @@
         </section>
     </main>
 </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".btn");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function (event) {
+            event.preventDefault();
+            const mensaje = `Hola, quiero reservar: ${this.parentElement.innerText.split(' - ')[0]}`;
+            const url = `https://wa.me/+5492615785797?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, "_blank");
+        });
+    });
+});
+
+    </script>
 </html>
