@@ -22,7 +22,10 @@ body {
 
 /* Estilo del header */
 header {
-background: linear-gradient(to right, #1a1a2e, #16213e); /* Negro azulado oscuro */
+    background: linear-gradient(to right, #1a1a2e, #16213e), url('brujas.gif'); /* Fondo con gradiente y GIF */
+    background-size: cover; /* Asegura que el GIF cubra toda el área */
+    background-position: center center; /* Centra el GIF */
+    background-attachment: fixed; /* Fija el GIF al hacer scroll */
     color: #fff;
     text-align: center;
     padding: 50px 20px;
@@ -30,6 +33,7 @@ background: linear-gradient(to right, #1a1a2e, #16213e); /* Negro azulado oscuro
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
     border-bottom: 2px solid #f5a3c7; /* Detalles sutiles para agregar elegancia */
 }
+
 
 header::after {
     content: '';
@@ -243,7 +247,7 @@ section.active {
             </ul>
         </section>
         <section id="micropigmentacion" class="active">
-            <h2>MicroPigmentación y Tatto</h2>
+            <h2>MicroPigmentación y Tattoo</h2>
             <p>Consultar disponibilidad y precios.</p>
             <a href="https://wa.me/+5492615785797?text=Quiero%20consultar%20sobre%20Micropigmentación%20y%20Tatto" class="btn">Consultar</a>
         </section>
