@@ -21,20 +21,38 @@ body {
 
 
 
+/* Estilo del header */
 header {
-    background: url('brujas.gif'), linear-gradient(to right, #1a1a2e, #16213e); /* Fondo con GIF y gradiente */
-    background-size: cover; /* Asegura que el GIF cubra toda el área */
-    background-position: center center; /* Centra el GIF */
-    background-attachment: fixed; /* Fija el GIF al hacer scroll */
+    background: linear-gradient(0deg, rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.8)), 
+                url(''); /* Elimina el GIF y coloca solo el gradiente */
+    background-size: cover; /* Cubre todo el espacio */
+    background-position: center center; /* Centra el fondo */
     color: #fff;
     text-align: center;
     padding: 50px 20px;
     position: relative;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
     border-bottom: 2px solid #f5a3c7; /* Detalles sutiles para agregar elegancia */
+    overflow: hidden; /* Asegura que el contenido no sobresalga */
 }
 
+/* Efecto animado de mar marino */
+@keyframes waves {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 2000px 0; /* Mueve el fondo horizontalmente */
+    }
+}
 
+header {
+    animation: waves 10s linear infinite; /* Animación que mueve el fondo */
+    background: linear-gradient(0deg, rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.8)), 
+                url(''); /* Fondo animado de olas */
+    background-size: 200% 100%; /* Aumenta el tamaño del fondo para animarlo */
+    background-repeat: repeat-x; /* Hace que el fondo se repita horizontalmente */
+}
 
 header::after {
     content: '';
