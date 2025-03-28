@@ -5,242 +5,228 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BRUJAS - Centro de Belleza</title>
     <link rel="stylesheet" >
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
     <style>
 :root {
-    --primary-color: #2d2d2d; /* Negro sofisticado */
-    --secondary-color: #bea67c; /* Oro/Dorado elegante */
-    --accent-color: #c0a9a8; /* Rosa neutro moderno */
-    --text-light: #ffffff;
-    --gradient-bg: linear-gradient(135deg, #f9f6f2 0%, #f1ece5 100%);
-    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --primary-color: #FFB6C1; /* Rosa suave */
+    --secondary-color: #FFDAB9; /* Durazno */
+    --accent-color: #FF69B4; /* Rosa medio */
+    --dark-color: #4A4A4A; /* Gris oscuro */
+    --light-color: #FFF5EE; /* Blanco hueso */
+    --gradient-header: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
+    --gradient-btn: linear-gradient(45deg, #FFB6C1 0%, #FFDAB9 100%);
 }
 
-/* Estilo general */
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lora', serif;
     margin: 0;
     padding: 0;
-    background: var(--gradient-bg);
-    color: var(--primary-color);
-    line-height: 1.7;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.8;
 }
 
-/* Header estilo revista */
+/* Header con efecto de onda suave */
 header {
-    background: var(--primary-color) url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1920') center/cover;
-    color: var(--text-light);
-    padding: 100px 20px 150px;
+    background: var(--gradient-header);
+    color: var(--dark-color);
+    text-align: center;
+    padding: 80px 20px 120px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 header::before {
     content: '';
     position: absolute;
-    top: 0;
+    bottom: -10px;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(45,45,45,0.9) 0%, rgba(45,45,45,0.7) 100%);
+    height: 60px;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23ffffff' d='M0 96l60-5.3C120 85 240 75 360 69.3 480 64 600 64 720 74.7 840 85 960 107 1080 112s240-5 300-10.7l60-5.3V0H0z'/%3E%3C/svg%3E") center/cover;
 }
 
 h1 {
-    font-size: 4.5rem;
-    font-weight: 300;
-    letter-spacing: 3px;
     margin: 0;
-    position: relative;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1.5px;
+    animation: slideDown 1s ease;
 }
 
-h1 span {
-    display: block;
-    font-size: 1.2rem;
-    letter-spacing: 6px;
-    margin-top: 15px;
-    color: var(--secondary-color);
+@keyframes slideDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-/* Main content estilo tarjetas de moda */
 main {
+    width: 90%;
     max-width: 1200px;
-    margin: -80px auto 50px;
-    padding: 0 20px;
+    margin: -60px auto 50px;
+    padding: 20px;
 }
 
 section {
-    background: var(--text-light);
+    background: white;
+    padding: 30px;
     margin-bottom: 30px;
     border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    transform: translateY(0);
-    transition: var(--transition);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    position: relative;
     overflow: hidden;
 }
 
 section:hover {
     transform: translateY(-5px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
 }
 
-h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin: 0;
-    padding: 30px;
-    background: var(--secondary-color);
-    color: var(--text-light);
-    position: relative;
-}
-
-h2::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 2px;
-    background: var(--secondary-color);
-}
-
-/* Listas estilo catálogo */
-ul {
-    padding: 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-}
-
-li {
-    padding: 20px;
-    border: 1px solid rgba(190,166,124,0.2);
-    border-radius: 8px;
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-}
-
-li:hover {
-    border-color: var(--secondary-color);
-    box-shadow: 0 5px 15px rgba(190,166,124,0.15);
-}
-
-/* Botones estilo lujo */
-.btn {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, #a58f6c 100%);
-    color: var(--text-light);
-    padding: 15px 35px;
-    border: none;
-    border-radius: 30px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
-    transition: var(--transition);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.btn::before {
+section::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
+    left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: 0.5s;
+    height: 4px;
+    background: var(--gradient-btn);
+    animation: borderGrow 0.5s ease;
+}
+
+@keyframes borderGrow {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+h2 {
+    font-size: 2em;
+    color: var(--dark-color);
+    margin-bottom: 25px;
+    position: relative;
+    padding-left: 20px;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 80%;
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    background: rgba(255, 182, 193, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+li:hover {
+    background: rgba(255, 182, 193, 0.1);
+    transform: translateX(10px);
+}
+
+.btn {
+    background: var(--gradient-btn);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3));
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
 }
 
 .btn:hover {
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(190,166,124,0.3);
 }
 
-.btn:hover::before {
-    left: 100%;
+.btn:hover::after {
+    left: 150%;
 }
 
-/* Tabs estilo minimalista */
+iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 15px;
+    border: none;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
 .tabs-container {
     display: flex;
+    justify-content: center;
     gap: 15px;
-    padding: 20px;
-    background: var(--text-light);
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     margin: 30px 0;
 }
 
 .tab {
-    padding: 15px 30px;
+    padding: 12px 25px;
+    background: rgba(255, 182, 193, 0.1);
+    color: var(--dark-color);
     border-radius: 30px;
-    background: transparent;
-    color: var(--primary-color);
-    border: 1px solid rgba(45,45,45,0.1);
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
-.tab.active, .tab:hover {
-    background: var(--secondary-color);
-    color: var(--text-light);
-    border-color: var(--secondary-color);
+.tab:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
 }
 
-/* Animaciones */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.tab.active {
+    background: var(--gradient-btn);
+    color: white;
+    border-color: rgba(255,255,255,0.3);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
 }
 
-section.active {
-    animation: fadeInUp 0.6s ease-out;
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
-/* Efecto parallax */
-.parallax-section {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin: 80px 0;
+.decorative-element {
+    animation: float 3s ease-in-out infinite;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-    
-    ul {
-        grid-template-columns: 1fr;
-    }
-    
-    .tabs-container {
-        flex-direction: column;
-    }
-}
-
 
 
     </style>
