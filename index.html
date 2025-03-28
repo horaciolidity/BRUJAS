@@ -7,94 +7,127 @@
     <link rel="stylesheet" href="styles.css">
 </head>
     <style>
-         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-            color: #333;
-        }
+         /* Estilo general del body */
+body {
+    font-family: 'Roboto', sans-serif; /* Fuente más moderna */
+    margin: 0;
+    padding: 0;
+    background-color: #1f1f1f; /* Fondo oscuro para darle un toque más elegante */
+    color: #e0e0e0; /* Color de texto suave para un contraste agradable */
+}
 
-        header {
-            background: linear-gradient(to right, #ff4081, #ff80ab);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
+/* Estilo del header */
+header {
+    background: linear-gradient(to right, #4c4c8c, #6a5acd); /* Colores más profundos */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
+    border-bottom: 3px solid #ff4081;
+}
 
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            background: white;
-            z-index: -1;
-            border-radius: 50% 50% 0 0;
-        }
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #2c2c52; /* Color de fondo oscuro para el efecto de curvado */
+    z-index: -1;
+    border-radius: 50% 50% 0 0;
+}
 
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: #ff4081;
-        }
+/* Título principal */
+h1 {
+    margin: 0;
+    font-size: 3em; /* Aumentado para mayor impacto */
+    font-family: 'Poppins', sans-serif; /* Fuente elegante y moderna */
+    color: #ff4081; /* Rosa fuerte para destacar el título */
+    letter-spacing: 2px; /* Espaciado de letras para darle un toque más estilizado */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para mejorar la legibilidad */
+}
 
-        main {
-            width: 90%;
-            max-width: 800px;
-            margin: 20px auto;
-        }
+/* Estilo para el main */
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+}
 
-        section {
-            background: white;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
+/* Estilo de las secciones */
+section {
+    background: #2a2a3b; /* Fondo oscuro para las secciones */
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más intensa para dar profundidad */
+}
 
-        h2 {
-            border-bottom: 2px solid #ff4081;
-            padding-bottom: 5px;
-        }
+h2 {
+    border-bottom: 2px solid #ff4081;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #ff4081;
+}
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+/* Estilo de listas */
+ul {
+    list-style: none;
+    padding: 0;
+}
 
-        li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-        }
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #444; /* Línea divisoria más tenue */
+    transition: background-color 0.3s ease;
+}
 
-        li:last-child {
-            border-bottom: none;
-        }
+li:hover {
+    background-color: #3b3b52; /* Cambio de color en hover para un efecto suave */
+}
 
-        .btn {
-            background: linear-gradient(to right, #6a0dad, #3a0071);
-            color: white;
-            padding: 8px 12px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+li:last-child {
+    border-bottom: none;
+}
 
-        .btn:hover {
-            background: linear-gradient(to right, #3a0071, #6a0dad);
-        }
+/* Estilo de los botones */
+.btn {
+    background: linear-gradient(to right, #6a0dad, #3a0071);
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px; /* Bordes más suaves */
+    font-weight: bold;
+    text-transform: uppercase; /* Mayúsculas para un toque moderno */
+    letter-spacing: 1px; /* Espaciado de letras */
+    transition: 0.4s ease-out; /* Transición más suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de profundidad para el botón */
+}
 
-        iframe {
-            width: 100%;
-            border-radius: 8px;
-        }
+.btn:hover {
+    background: linear-gradient(to right, #3a0071, #6a0dad);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más intensa en hover */
+}
+
+/* Estilo de los iframe */
+iframe {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra para darle más énfasis */
+    border: none;
+}
+
+/* Detalles extra para darle un toque más pulido */
+section p, section ul {
+    color: #d1d1d1; /* Color de texto más suave para mayor legibilidad */
+}
+
 
     </style>
 <body>
