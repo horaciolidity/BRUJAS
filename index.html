@@ -204,6 +204,41 @@ section.active {
     to { opacity: 1; }
 }
 
+        /* Contenedor del icono y texto */
+.instagram-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del enlace */
+.instagram-link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 40px; /* Tamaño grande para el icono */
+    display: inline-block;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out; /* Efecto de transición */
+}
+
+/* Efecto al pasar el ratón sobre el enlace */
+.instagram-link:hover {
+    transform: scale(1.2); /* Aumenta el tamaño del icono */
+}
+
+/* Estilo del icono de Instagram */
+.instagram-icon {
+    color: #e1306c; /* Color de Instagram */
+}
+
+/* Texto debajo del icono */
+p {
+    font-size: 16px;
+    color: #333;
+}
+
     </style>
 <body>
     <header>
@@ -281,6 +316,12 @@ section.active {
             referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
     </main>
+    <div class="instagram-container">
+        <a href="https://www.instagram.com/estetica.brujas/" target="_blank" class="instagram-link">
+            <span class="material-icons instagram-icon">instagram</span>
+        </a>
+        <p>Síguenos en Instagram</p>
+    </div>
 </body>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
