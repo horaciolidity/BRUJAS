@@ -4,179 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BRUJAS - Centro de Belleza</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" >
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
     <style>
-/* Estilo general del body */
+:root {
+    --primary-color: #2d2d2d; /* Negro sofisticado */
+    --secondary-color: #bea67c; /* Oro/Dorado elegante */
+    --accent-color: #c0a9a8; /* Rosa neutro moderno */
+    --text-light: #ffffff;
+    --gradient-bg: linear-gradient(135deg, #f9f6f2 0%, #f1ece5 100%);
+    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Estilo general */
 body {
-    font-family: 'Lora', serif; /* Fuente elegante y suave */
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9; /* Fondo muy suave para una atmósfera relajante */
-    color: #333; /* Texto oscuro para una buena legibilidad */
+    background: var(--gradient-bg);
+    color: var(--primary-color);
+    line-height: 1.7;
 }
 
-/* Estilo del header */
+/* Header estilo revista */
 header {
-background: linear-gradient(to right, #1a1a2e, #16213e); /* Negro azulado oscuro */
-    color: #fff;
-    text-align: center;
-    padding: 50px 20px;
+    background: var(--primary-color) url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1920') center/cover;
+    color: var(--text-light);
+    padding: 100px 20px 150px;
     position: relative;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
-    border-bottom: 2px solid #f5a3c7; /* Detalles sutiles para agregar elegancia */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-header::after {
+header::before {
     content: '';
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 60px;
-    background: #fff;
-    z-index: -1;
-    border-radius: 50% 50% 0 0;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(45,45,45,0.9) 0%, rgba(45,45,45,0.7) 100%);
 }
 
-/* Título principal */
 h1 {
+    font-size: 4.5rem;
+    font-weight: 300;
+    letter-spacing: 3px;
     margin: 0;
-    font-size: 3em;
-    font-family: 'Lora', serif;
-    color: #f8b3d0; /* Color suave para el título */
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para mejorar la visibilidad */
+    position: relative;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-family: 'Playfair Display', serif;
 }
 
-/* Estilo para el main */
+h1 span {
+    display: block;
+    font-size: 1.2rem;
+    letter-spacing: 6px;
+    margin-top: 15px;
+    color: var(--secondary-color);
+}
+
+/* Main content estilo tarjetas de moda */
 main {
-    width: 90%;
-    max-width: 1000px;
-    margin: 50px auto;
-    padding: 20px;
+    max-width: 1200px;
+    margin: -80px auto 50px;
+    padding: 0 20px;
 }
 
-/* Estilo de las secciones */
 section {
-    background: #fff;
-    padding: 25px;
+    background: var(--text-light);
     margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transform: translateY(0);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
 }
 
 h2 {
-    border-bottom: 2px solid #f5a3c7; /* Un detalle sutil debajo de los subtítulos */
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    font-size: 1.8em;
-    color: #f5a3c7; /* Color suave en los subtítulos */
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin: 0;
+    padding: 30px;
+    background: var(--secondary-color);
+    color: var(--text-light);
+    position: relative;
 }
 
-/* Estilo de listas */
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--secondary-color);
+}
+
+/* Listas estilo catálogo */
 ul {
-    list-style: none;
-    padding: 0;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
 }
 
 li {
+    padding: 20px;
+    border: 1px solid rgba(190,166,124,0.2);
+    border-radius: 8px;
+    transition: var(--transition);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid #eee; /* Línea divisoria suave */
-    transition: background-color 0.3s ease;
+    flex-direction: column;
 }
 
 li:hover {
-    background-color: #f8f3f3; /* Color de hover suave */
+    border-color: var(--secondary-color);
+    box-shadow: 0 5px 15px rgba(190,166,124,0.15);
 }
 
-li:last-child {
-    border-bottom: none;
-}
-
-/* Estilo de los botones */
+/* Botones estilo lujo */
 .btn {
-    background: linear-gradient(to right, #f5a3c7, #ff83b5); /* Tonos rosados delicados */
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 8px; /* Bordes suaves */
-    font-weight: bold;
-    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #a58f6c 100%);
+    color: var(--text-light);
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
     letter-spacing: 1px;
-    transition: 0.3s ease-out;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra delicada para los botones */
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.5s;
 }
 
 .btn:hover {
-    background: linear-gradient(to right, #ff83b5, #f5a3c7);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra más suave en hover */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(190,166,124,0.3);
 }
 
-/* Estilo de los iframe */
-iframe {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra para darle más énfasis */
-    border: none;
+.btn:hover::before {
+    left: 100%;
 }
 
-/* Detalles extra para darle un toque más pulido */
-section p, section ul {
-    color: #666; /* Color de texto suave y fácil de leer */
-    line-height: 1.6; /* Mejor espaciado entre líneas */
-}
-        /* Estilos para las pestañas */
+/* Tabs estilo minimalista */
 .tabs-container {
     display: flex;
-    justify-content: center;
-    margin: 20px 0;
-    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    background: var(--text-light);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin: 30px 0;
 }
 
 .tab {
     padding: 15px 30px;
-    margin: 5px;
-    background: #f8b3d0;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s ease;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
+    border-radius: 30px;
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid rgba(45,45,45,0.1);
+    transition: var(--transition);
 }
 
-.tab:hover {
-    background: #ff83b5;
-    transform: translateY(-2px);
+.tab.active, .tab:hover {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    border-color: var(--secondary-color);
 }
 
-.tab.active {
-    background: linear-gradient(to right, #f5a3c7, #ff83b5);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Ocultar todas las secciones por defecto */
-section {
-    display: none;
-    /* Mantener los otros estilos existentes */
-}
-
-/* Mostrar solo la sección activa */
 section.active {
-    display: block;
-    animation: fadeIn 0.5s ease;
+    animation: fadeInUp 0.6s ease-out;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* Efecto parallax */
+.parallax-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 80px 0;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .tabs-container {
+        flex-direction: column;
+    }
+}
 
 
 
