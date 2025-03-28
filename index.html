@@ -129,6 +129,53 @@ section p, section ul {
     color: #666; /* Color de texto suave y fácil de leer */
     line-height: 1.6; /* Mejor espaciado entre líneas */
 }
+        /* Estilos para las pestañas */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.tab {
+    padding: 15px 30px;
+    margin: 5px;
+    background: #f8b3d0;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.tab:hover {
+    background: #ff83b5;
+    transform: translateY(-2px);
+}
+
+.tab.active {
+    background: linear-gradient(to right, #f5a3c7, #ff83b5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ocultar todas las secciones por defecto */
+section {
+    display: none;
+    /* Mantener los otros estilos existentes */
+}
+
+/* Mostrar solo la sección activa */
+section.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
 
 
@@ -139,8 +186,16 @@ section p, section ul {
         <h1>BRUJAS</h1>
         <p>Centro de Estetica</p>
     </header>
+
+    <nav class="tabs-container">
+    <a href="#nails" class="tab active">Nails</a>
+    <a href="#lashes" class="tab">Lashes</a>
+    <a href="#brows" class="tab">Brows</a>
+    <a href="#micropigmentacion" class="tab">Micropigmentación</a>
+    <a href="#ubicacion" class="tab">Ubicación</a>
+    </nav>
     <main>
-        <section id="nails">
+        <section id="nails" class="active">
             <h2>NAILS</h2>
             <ul>
                 <li>Manicura Rusa - $8500 <a href="https://wa.me/+5492615785797?text=Quiero%20reservar%20Manicura%20Rusa" class="btn">Reservar</a></li>
@@ -152,7 +207,7 @@ section p, section ul {
                 <li>Exfoliación + Hidratación con Parafina - $8000 <a href="https://wa.me/+5492615785797?text=Quiero%20reservar%20Exfoliación%20e%20Hidratación%20con%20Parafina" class="btn">Reservar</a></li>
             </ul>
         </section>
-        <section id="lashes">
+        <section id="lashes" class="active">
             <h2>LASHES</h2>
             <ul>
                 <li>Lifting - $11500 <a href="https://wa.me/+5492615785797?text=Quiero%20reservar%20Lifting" class="btn">Reservar</a></li>
@@ -164,7 +219,7 @@ section p, section ul {
                 <li>Volumen 4D - $17500 <a href="https://wa.me/+5492615785797?text=Quiero%20reservar%20Volumen%204D" class="btn">Reservar</a></li>
             </ul>
         </section>
-        <section id="brows">
+        <section id="brows" class="active">
             <h2>BROWS</h2>
             <ul>
                 <li>Diseño y Perfilado - $4500 <a href="https://wa.me/+5492615785797?text=Quiero%20reservar%20Diseño%20y%20Perfilado" class="btn">Reservar</a></li>
@@ -173,19 +228,64 @@ section p, section ul {
                 <li>Perfilado + Laminado + Henna - $12000 <a href="https://wa.me/+5492615785797?text=Quiero%20reservar%20Perfilado%20+%20Laminado%20+%20Henna" class="btn">Reservar</a></li>
             </ul>
         </section>
-        <section id="micropigmentacion">
+        <section id="micropigmentacion" class="active">
             <h2>MicroPigmentación y Tatto</h2>
             <p>Consultar disponibilidad y precios.</p>
             <a href="https://wa.me/+5492615785797?text=Quiero%20consultar%20sobre%20Micropigmentación%20y%20Tatto" class="btn">Consultar</a>
         </section>
-        <section id="ubicacion">
-            <h2>Ubicación</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d323019.2991468384!2d-58.443611358257374!3d-34.61177640601935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb7a2d258b49%3A0x9e2260a1d88b206f!2sBuenos%20Aires!5e0!3m2!1ses-419!2sar!4v1617662926459!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </section>
+       <section id="ubicacion">
+    <h2>Ubicación</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.306233906627!2d-68.85491192426958!3d-32.88639167362624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e091ed2dd83f7%3A0xf51c6e8579441817!2sAv.%20San%20Mart%C3%ADn%20%26%20Av.%20Las%20Heras%2C%20Mendoza!5e0!3m2!1ses-419!2sar!4v1718675412973!5m2!1ses-419!2sar" 
+            width="600" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
     </main>
 </body>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+
+            const tabs = document.querySelectorAll('.tab');
+            const sections = document.querySelectorAll('section');
+    
+    // Función para mostrar sección
+    function showSection(sectionId) {
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+        document.querySelector(sectionId).classList.add('active');
+    }
+    
+    // Manejar clic en pestañas
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function(e) {
+            e.preventDefault();
+            const sectionId = this.getAttribute('href');
+            
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            showSection(sectionId);
+            
+            // Actualizar URL sin recargar
+            history.pushState(null, null, sectionId);
+        });
+    });
+    
+    // Mostrar sección al cargar/recargar
+    const hash = window.location.hash;
+    if (hash) {
+        const tab = document.querySelector(`.tab[href="${hash}"]`);
+        if (tab) {
+            tab.click();
+        }
+    } else {
+        showSection('#nails');
+        document.querySelector('.tab').classList.add('active');
+    }
+
     const buttons = document.querySelectorAll(".btn");
 
     buttons.forEach(button => {
